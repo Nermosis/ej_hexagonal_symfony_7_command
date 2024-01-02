@@ -1,0 +1,1 @@
+# ej_hexagonal_symfony_7_command
