@@ -1,4 +1,2 @@
-./vendor
-var/cache
-.var/cache
-var\cache
+/var/cache
+/vendor
