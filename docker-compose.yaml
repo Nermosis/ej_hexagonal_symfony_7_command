@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  php:
+    image: php:8.2-fpm-alpine
+    build:
+      context: ./etc
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 8087:80
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: 1
+    
+
+  nginx:
+    image: nginx:stable-alpine3.17
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 80:80
+    depends_on:
+      - php
+
+  
